@@ -293,7 +293,7 @@ namespace LesApp1
         public IEnumerator<T> GetEnumerator() => this as IEnumerator<T>;
 
         /// <summary>
-        /// Повернення нумератора - generic
+        /// Повернення нумератора
         /// </summary>
         /// <returns></returns>
         IEnumerator IEnumerable.GetEnumerator() => this as IEnumerator;

@@ -30,6 +30,8 @@ namespace LesApp0
             int[] array = Enumerable.Range(0, new Random().Next(27, 101)).ToArray();
 
             // вивід результатів
+            #region Через метод розширення
+#if false
             Console.Write("\tПарні числа:\n\t");
             // парні числа
             foreach (int i in array.ToListEven())
@@ -43,6 +45,26 @@ namespace LesApp0
             {
                 Console.Write(i + " ");
             }
+#endif
+            #endregion
+
+            #region Через звичайний метод
+#if true
+            Console.Write("\tПарні числа:\n\t");
+            // парні числа
+            foreach (int i in Extention.ToListEven(array))
+            {
+                Console.Write(i + " ");
+            }
+
+            Console.Write("\n\n\tНепарні числа:\n\t");
+            // непарні числа
+            foreach (int i in Extention.ToListOdd(array))
+            {
+                Console.Write(i + " ");
+            }
+#endif
+            #endregion
 
             // repeat
             DoExitOrRepeat();

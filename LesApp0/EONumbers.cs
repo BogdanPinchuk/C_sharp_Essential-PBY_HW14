@@ -19,7 +19,8 @@ namespace LesApp0
             /// <summary>
             /// Повернення поточного значення
             /// </summary>
-            object IEnumerator.Current { get { return array[state]; } }
+            object IEnumerator.Current
+                => array[state];
 
             /// <summary>
             /// Крокування по масиву
@@ -48,7 +49,8 @@ namespace LesApp0
             /// Повернення нумератора
             /// </summary>
             /// <returns></returns>
-            public IEnumerator GetEnumerator() => this as IEnumerator;
+            public IEnumerator GetEnumerator() 
+                => this as IEnumerator;
         }
     }
 }

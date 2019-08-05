@@ -279,12 +279,14 @@ namespace LesApp3
         /// <summary>
         /// Повернення поточного значення - generic
         /// </summary>
-        public T Current => array[state];
+        public T Current 
+            => array[state];
 
         /// <summary>
         /// Повернення поточного значення
         /// </summary>
-        object IEnumerator.Current => array[state];
+        object IEnumerator.Current 
+            => array[state];
 
         /// <summary>
         /// Повернення нумератора - generic

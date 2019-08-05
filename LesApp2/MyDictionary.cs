@@ -67,7 +67,7 @@ namespace LesApp2
                 else
                 {
                     Error("Спроба виходу за межі колекції/масиву.");
-                    return default;
+                    return default(TValue);
                 }
             }
             set
@@ -102,7 +102,7 @@ namespace LesApp2
                 {
                     // якщо нічого не знайдено
                     Error("Вказаний ключ відсутній.");
-                    return default;
+                    return default(TValue);
                 }
             }
             set
@@ -189,6 +189,7 @@ namespace LesApp2
             keys[Count] = key;
             values[Count++] = value;
         }
+
         /// <summary>
         /// Очищення даних
         /// </summary>
@@ -225,23 +226,13 @@ namespace LesApp2
         /// Повернення поточного значення - generic
         /// </summary>
         public MyKeyValuePair<TKey, TValue> Current
-        {
-            get
-            {
-                return new MyKeyValuePair<TKey, TValue>(keys[state], values[state]);
-            }
-        }
+            => new MyKeyValuePair<TKey, TValue>(keys[state], values[state]);
 
         /// <summary>
         /// Повернення поточного значення
         /// </summary>
         object IEnumerator.Current
-        {
-            get
-            {
-                return new MyKeyValuePair<TKey, TValue>(keys[state], values[state]);
-            }
-        }
+            => new MyKeyValuePair<TKey, TValue>(keys[state], values[state]);
 
         /// <summary>
         /// Повернення нумератора - generic
@@ -278,7 +269,8 @@ namespace LesApp2
         /// <summary>
         /// Скидання (лічильника) ітератора
         /// </summary>
-        public void Reset() => state = -1;
+        public void Reset() 
+            => state = -1;
 
         public void Dispose() { }
     }

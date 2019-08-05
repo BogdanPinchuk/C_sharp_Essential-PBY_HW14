@@ -56,6 +56,7 @@ namespace LesApp3
         /// Ємність масиву
         /// </summary>
         public int Capacity => array.Length;
+
         /// <summary>
         /// Додавання одного елемента
         /// </summary>
@@ -278,24 +279,26 @@ namespace LesApp3
         /// <summary>
         /// Повернення поточного значення - generic
         /// </summary>
-        public T Current { get { return array[state]; } }
+        public T Current => array[state];
 
         /// <summary>
         /// Повернення поточного значення
         /// </summary>
-        object IEnumerator.Current { get { return array[state]; } }
+        object IEnumerator.Current => array[state];
 
         /// <summary>
         /// Повернення нумератора - generic
         /// </summary>
         /// <returns></returns>
-        public IEnumerator<T> GetEnumerator() => this as IEnumerator<T>;
+        public IEnumerator<T> GetEnumerator() 
+            => this as IEnumerator<T>;
 
         /// <summary>
         /// Повернення нумератора
         /// </summary>
         /// <returns></returns>
-        IEnumerator IEnumerable.GetEnumerator() => this as IEnumerator;
+        IEnumerator IEnumerable.GetEnumerator()
+            => this as IEnumerator;
 
         /// <summary>
         /// Крокування по масиву
